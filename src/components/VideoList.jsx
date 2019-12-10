@@ -1,13 +1,13 @@
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoListEntry from './VideoListEntry.js';
 
-var VideoList = (props) =>(
+var VideoList = ({videos, onListItemClick}) =>(
 
     <div className="video-list">
 
-    {props.videos.map( (item) =>(
+    {videos.map( (video) =>(
 
-      <VideoListEntry item = {item}/>
+      <VideoListEntry video = {video} onListItemClick ={onListItemClick} />
     ))}
 
     </div> )
@@ -17,6 +17,7 @@ var VideoList = (props) =>(
 // Warnings will be shown in the console when the defined rules are violated
 VideoList.propTypes = {
   videos: React.PropTypes.array.isRequired
+
 };
 
 
